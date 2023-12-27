@@ -57,6 +57,56 @@ Threads are basic unit of execution.They have some of the properties of prcoess 
 # What is Cache ?
 Cache memory is a type of high-speed volatile It acts as a buffer between the main memory (RAM) and the central processing unit (CPU). The purpose of cache memory is to store copies of frequently accessed data from main memory to provide quicker access for the CPU, reducing the average time to access memory.computer memory.Cache Memory holds frequently requested data and instructions so that they are immediately available to the CPU when needed.(cache se data delete krne pr wo main memory se delete nhi hota).
 
-# What is the difference between paging and segmentation?
+# What are Semaphores?
+Semaphore is an integer variable,used by vaious process in a mutual exclusive manner to achieve synchronization.
+
+Types
+1.Counting Semaphore (-α to +α)
+2.Binary Semapgore (0 or 1)
+
+# What is a process control block (PCB), and what information does it contain?
+A process control block (PCB) is a data structure that holds essential information about a process, including process state, program counter, CPU registers, and memory information.
+
+
+
 
 # What is thrashing in OS?
+# Explain the concept of paging and its advantages.
+# What is a page fault, and how is it handled by the operating system?
+
+# What are the differences between multiprogramming, multitasking, and multiprocessing?
+
+# Explain the concept of a context switch.
+# What are system calls.
+
+# What is a deadlock in an operating system?
+A deadlock in an operating system occurs when two or more processes are blocked and waiting for each other to release resources that they hold, resulting in a situation where none of the processes can proceed.
+
+**What are the necessary conditions for a deadlock to occur?**
+The necessary conditions for a deadlock to occur are:
+
+**Mutual exclusion** At least one resource must be held in a non-shareable mode.
+**Hold and wait** A process holding at least one resource is waiting to acquire additional resources held by other processes.
+**No preemption** A resource can only be released voluntarily by the process holding it.
+**Circular wait** A set of processes is waiting for a resource held by another process, which is also waiting for a resource held by another process in the set.
+
+**How can a deadlock be prevented in an operating system?**
+A deadlock can be prevented in an operating system by employing one or more of the following methods:
+
+Resource allocation denial- The operating system can refuse resource requests that would lead to a deadlock.
+Resource ordering- The operating system can require processes to request resources in a predetermined order to avoid circular wait.
+Deadlock detection and recovery- The operating system can periodically check for deadlock and take actions to recover from it.
+Preemption- The operating system can preempt resources from one process and allocate them to another process in order to avoid deadlock.
+
+**How can a deadlock be detected in an operating system?**
+Deadlock can be detected in an operating system by using various algorithms such as the banker's algorithm, the wait-for graph algorithm, or the resource-allocation graph algorithm. These algorithms analyze the system to check for the presence of the necessary conditions for deadlock and determine if a deadlock exists.
+
+**How can a deadlock be resolved in an operating system?**
+A deadlock can be resolved in an operating system by using one or more of the following methods:
+
+**Resource preemption** The operating system can preempt resources from one process and allocate them to another process in order to break the circular wait.
+**Process termination** The operating system can terminate one or more processes involved in the deadlock to release resources and break the deadlock.
+**Rollback** The operating system can roll back the state of one or more processes to a previous checkpoint to release resources and break the deadlock.
+**Timeouts** The operating system can set timeouts for resource requests to prevent processes from waiting indefinitely and avoid deadlock.
+
+
