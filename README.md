@@ -53,6 +53,26 @@ It makes it possible to run more applications at once.
 Threads are basic unit of execution.They have some of the properties of prcoess that is why they are called lightweight process.Each process can have number of threads executing in it.Each threads contains- A program counter,a register set,a stack.
 
 **Multithreading**
+If a process has multiple threads of control ,it is called multthreading.
+With MultiThreading a single process can perform multiple functions by performing tasks in parallel like one thread can be used to display pictures and other can be used to draw graphics 
+MultiThreading enhances resource sharing .
+
+There are basically two types of threads-
+**User level threads**:which works on user level and are visible to the programmer
+**Kernel level threads**: which operates on kernel level
+In general user level threads are faster to create and manage than kernal level threads.
+
+
+There are three different types of thread models -
+
+🎯Many -to- one
+many user level threads are mapped to a single kernel level thread
+
+🎯One-to-one
+One single user level thread is mapped to one kernel level thread.
+
+🎯Many-to-many
+many user level threads are mapped to a smaller or equal number of kernel threads.
 
 # What is Cache ?
 Cache memory is a type of high-speed volatile It acts as a buffer between the main memory (RAM) and the central processing unit (CPU). The purpose of cache memory is to store copies of frequently accessed data from main memory to provide quicker access for the CPU, reducing the average time to access memory.computer memory.Cache Memory holds frequently requested data and instructions so that they are immediately available to the CPU when needed.(cache se data delete krne pr wo main memory se delete nhi hota).
@@ -66,6 +86,12 @@ Types
 
 # What is a process control block (PCB), and what information does it contain?
 A process control block (PCB) is a data structure that holds essential information about a process, including process state, program counter, CPU registers, and memory information.
+🧩Process state-whether the process is in new,ready,running,waiting or terminated state
+🧩Program counter -indicates the address of the next instruction to be executed for the process 
+🧩CPU scheduling information- information including priority of the process
+🧩Accounting information -includes the amount of CPU used,time limits etc
+🧩I/O status information -this information includes the list of input output devices allocated to the process
+🧩Memory management information
 
 
 
@@ -77,7 +103,22 @@ A process control block (PCB) is a data structure that holds essential informati
 # What are the differences between multiprogramming, multitasking, and multiprocessing?
 
 # Explain the concept of a context switch.
+Context switching involves saving the context of the running process in PCB so that it can be restored later ,and then loading context or state of another process and run it.
 # What are system calls.
+System call is a special function that is used by the process to request action from the Operating system.System calls provide the interface between process and operating system so that process can communicate with operating system.
+
+Types of system calls-
+
+🌀 Process Control: handles system calls for process creation, deletion etc.
+Example- end,abort,load,wait, execute.
+
+🌀 File Management: file manipulation events like creating, deleting, reading files
+
+🌀Device management: request device,release device, logically attach or detach Device
+
+🌀 Information maintenance:get time,set time,get system data.
+
+🌀 Communication: send, receive messages, transfer information,create communication.
 
 # What is a deadlock in an operating system?
 A deadlock in an operating system occurs when two or more processes are blocked and waiting for each other to release resources that they hold, resulting in a situation where none of the processes can proceed.
@@ -110,3 +151,29 @@ A deadlock can be resolved in an operating system by using one or more of the fo
 **Timeouts** The operating system can set timeouts for resource requests to prevent processes from waiting indefinitely and avoid deadlock.
 
 
+
+# What is a socket? 🔌
+
+-Socket is the end point for communication between processes in client-server architecture.
+A socket is identified with an IP address and a port number.
+
+⚠️ Port number must be less than 1024
+
+
+
+# What are process scheduling queues?
+
+A process scheduling is the activity of the removal of running process from the CPU
+And selection of another process on the basis of a particular strategy. Operating system manages all PCB in program scheduling queue.
+
+There are mainly 3 types of scheduling queues:
+
+🍄Job queue-it contains all processes of the system
+🍄Ready queue -the processes which are ready and  has all the resources and is waiting for execution goes to the ready queue 
+🍄Device queue- processes waiting for a particular input output device goes to the input queue
+
+
+
+# What is the critical section?🧩
+
+Each process has a segment of code called the critical section in which the process may be changing common variables , updating a table, writing a file and so on.When a process is executing in it's critical section,no other process is allowed to execute in it's critical section i.e no two process are executing in their critical sections at the same time.
