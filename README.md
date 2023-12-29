@@ -41,6 +41,9 @@ In FCFS Scheduling the process which arrives first in the ready queue is firstly
 👾 It suffers from convoy effect i.e. processes with higher burst time arrived before  
 the processes with smaller burst time
 
+# What is Round Robin Scheduling?  
+The Round robin scheduling algorithm is one of the CPU scheduling algorithms in which every process gets a fixed amount of time quantum to execute the process.In this algorithm, every process gets executed cyclically. This means that processes that have their burst time remaining after the expiration of the time quantum are sent back to the ready state and wait for their next turn to complete the execution until it terminates. This processing is done in FIFO order which suggests that processes are executed on a first-come, first-serve basis.
+
 # What is virtual memory?
 A computer can address more memory than the amount physically installed on the system. This extra memory is actually called virtual memory and it is a section of a hard disk.  
 **Working**
@@ -104,10 +107,10 @@ A process control block (PCB) is a data structure that holds essential informati
 
 
 
-# Explain the concept of a context switch.
+# Explain the concept of a Context switch.
 Context switching involves saving the context of the running process in PCB so that it can be restored later ,and then loading context or state of another process and run it.
 
-# What are system calls.
+# What are System calls.
 System call is a special function that is used by the process to request action from the Operating system.System calls provide the interface between process and operating system so that process can communicate with operating system.
 
 Types of system calls-
@@ -153,8 +156,10 @@ A deadlock can be resolved in an operating system by using one or more of the fo
 **Rollback** The operating system can roll back the state of one or more processes to a previous checkpoint to release resources and break the deadlock.  
 **Timeouts** The operating system can set timeouts for resource requests to prevent processes from waiting indefinitely and avoid deadlock.  
 
-
-
+# Bankers Algorithm
+The Banker's Algorithm is used to allocate resources to a process considering the availability of the resources and the predetermined maximum need of a process. It checks whether the resources can be allocated to a process or not, for its execution, which is called the “safe state” check.  
+It is named the “Banker's Algorithm” because the banks use the same technique to allocate money and sanction loans to their customers or account holders.
+(also a solution to deadlock)
 # What is a socket? 🔌
 
 -Socket is the end point for communication between processes in client-server architecture.
@@ -199,6 +204,9 @@ Aging is a technique which helps in avoiding starvation in the resource scheduli
 # What is Spooling?
 Data is transmitted to and held in memory or other volatile storage until the software or computer asks for it to be executed.Spooling is the temporary storage of data for usage and execution by a device, program, or system.
 
+# What is Demand Paging?
+Demand paging is a type of swapping done in virtual memory systems. In demand paging, the data is not copied from the disk to the RAM until they are needed or being demanded by some program.The data will not be copied when the data is already available on memeory. This is called lazy evaluation beacuse on;y demanded pages of memory are being swapped from secondary storage to main memory.
+
 
 **Throughput**  number of processes that complete their execution per time unit  
 **Turnaround time** amount of time to execute a particular process  
@@ -210,4 +218,8 @@ Data is transmitted to and held in memory or other volatile storage until the so
 
 **medium term scheduler** Swaps processes in and out of memory  
 **long term scheduler** Selects processes from job queue and loads them into ready queue.(new se ready state me kis kis process ko leke jana hai wo decide krta hai)  
-**Thrashing** Condition when continuous page fault and paging activites occur.Thrashing could lead to a program collapse and degraded CPU performance.  
+**Thrashing** Condition when continuous page fault and paging activites occur.Thrashing could lead to a program collapse and degraded CPU performance.
+**Race Condition** A race condition is where multiple processes currently read and write to a shared memory locaton and the results depends upon the order of execution
+**Burst Time** The time for which cpu executes on a process
+**Memory Management Unit** converts logical address to physical address
+
