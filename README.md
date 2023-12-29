@@ -105,40 +105,22 @@ A process control block (PCB) is a data structure that holds essential informati
 
 # What is thrashing in OS?
 Condition when continuous page fault and paging activites occur.Thrashing could lead to a program collapse and degraded CPU performance.
-# Explain the concept of paging and its advantages.
 
-# What is a page fault, and how is it handled by the operating system?
+
+
+
 
 # What are the differences between multiprogramming, multitasking, and multiprocessing?
-Multi programming: Multiprogramming is the technique of running several programs at a time
-using timesharing.It allows a computer to do several things at the same time. Multiprogramming
-creates logical parallelism.
-The concept of multiprogramming is that the operating system keeps several jobs in memory
-simultaneously. The operating system selects a job from the job pool and starts executing a job,
-when that job needs to wait for any i/o operations the CPU is switched to another job. So the
-main idea here is that the CPU is never idle.
-Multi tasking: Multitasking is the logical extension of multiprogramming .The concept of
-multitasking is quite similar to multiprogramming but difference is that the switching between
-jobs occurs so frequently that the users can interact with each program while it is running. This
-concept is also known as time-sharing systems. A time-shared operating system uses CPU
-scheduling and multiprogramming to provide each user with a small portion of time-shared
+**Multi programming** Multiprogramming is the technique of running several programs at a time using timesharing.It allows a computer to do several things at the same time. The concept of multiprogramming is that the operating system keeps several jobs in memory simultaneously.
+
+**Multi tasking** Multitasking is the logical extension of multiprogramming .The concept of multitasking is quite similar to multiprogramming but difference is that the switching between jobs occurs so frequently that the users can interact with each program while it is running. This concept is also known as time-sharing systems. A time-shared operating system uses CPU scheduling and multiprogramming to provide each user with a small portion of time-shared
 system.
-Multi threading: An application typically is implemented as a separate process with several
-threads of control. In some situations a single application may be required to perform several
-similar tasks for example a web server accepts client requests for web pages, images, sound, and
-so forth. A busy web server may have several of clients concurrently accessing it. If the web
-server ran as a traditional single-threaded process, it would be able to service only one client at a
-time. The amount of time that a client might have to wait for its request to be serviced could be
-enormous.
-So it is efficient to have one process that contains multiple threads to serve the same purpose.
-This approach would multithread the web-server process, the server would create a separate
-thread that would listen for client requests when a request was made rather than creating another
-process it would create another thread to service the request.
-So to get the advantages like responsiveness, Resource sharing economy and utilization of
-multiprocessor architectures multithreading concept can be used 
+
+**Multi threading**
 
 # Explain the concept of a context switch.
 Context switching involves saving the context of the running process in PCB so that it can be restored later ,and then loading context or state of another process and run it.
+
 # What are system calls.
 System call is a special function that is used by the process to request action from the Operating system.System calls provide the interface between process and operating system so that process can communicate with operating system.
 
@@ -213,29 +195,25 @@ There are mainly 3 types of scheduling queues:
 
 Each process has a segment of code called the critical section in which the process may be changing common variables , updating a table, writing a file and so on.When a process is executing in it's critical section,no other process is allowed to execute in it's critical section i.e no two process are executing in their critical sections at the same time.
 
-# What is a long term scheduler & short term schedulers?
-
-Throughput – number of processes that complete their execution per time unit
-Turnaround time – amount of time to execute a particular process
-Waiting time – amount of time a process has been waiting in the ready queue 
+# What are long term scheduler & short term scheduler & medium term scheduler?
 
 
-What is fragmentation? Different types of fragmentation?
-Ans : Fragmentation occurs in a dynamic memory allocation system when many of the free
-blocks are too small to satisfy any request. 
-External Fragmentation: External Fragmentation happens when a dynamic memory allocation
-algorithm allocates some memory and a small piece is left over that cannot be effectively used. If
-too much external fragmentation occurs, the amount of usable memory is drastically
-reduced.Total memory space exists to satisfy a request, but it is not contiguous
-Internal Fragmentation: Internal fragmentation is the space wasted inside of allocated memory
-blocks because of restriction on the allowed sizes of allocated blocks.Allocated memory may be
-slightly larger than requested memory; this size difference is memory internal to a partition, but
+
+
+# What is fragmentation? Different types of fragmentation?
+Fragmentation occurs in a dynamic memory allocation system when many of the free blocks are too small to satisfy any request. 
+**External Fragmentation** External Fragmentation happens when a dynamic memory allocation algorithm allocates some memory and a small piece is left over that cannot be effectively used. Iftoo much external fragmentation occurs, the amount of usable memory is drastically reduced.Total memory space exists to satisfy a request, but it is not contiguous
+**Internal Fragmentation** Internal fragmentation is the space wasted inside of allocated memory blocks because of restriction on the allowed sizes of allocated blocks.Allocated memory may be slightly larger than requested memory; this size difference is memory internal to a partition, but
 not being used Reduce external fragmentation by compaction
 
 
-What is aging in the Operating System?
-Answer: Aging is a technique which helps in avoiding starvation in the resource scheduling system. Starvation occurs when a process is unable to get the resources it needs to run, even though it is waiting for those resources. Aging works by increasing the priority of a process that has been waiting for a long time. This means that the process is more likely to be scheduled to run, even if it has a lower priority than other processes.
+# What is aging in the Operating System?
+Aging is a technique which helps in avoiding starvation in the resource scheduling system. Starvation occurs when a process is unable to get the resources it needs to run, even though it is waiting for those resources. Aging works by increasing the priority of a process that has been waiting for a long time. This means that the process is more likely to be scheduled to run, even if it has a lower priority than other processes.
 
 # What is Spooling?
-spooling is a process 
+Data is transmitted to and held in memory or other volatile storage until the software or computer asks for it to be executed.Spooling is the temporary storage of data for usage and execution by a device, program, or system.
 
+
+**Throughput**  number of processes that complete their execution per time unit
+**Turnaround time** amount of time to execute a particular process
+**Waiting time**  amount of time a process has been waiting in the ready queue 
